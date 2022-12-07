@@ -13,6 +13,7 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+<<<<<<< HEAD
 
 
 To download your dataset
@@ -80,3 +81,5 @@ MONGO_DB_URL="mongodb://localhost:27017"
 AWS_ACCESS_KEY_ID="aagswdiquyawvdiu"
 AWS_SECRET_ACCESS_KEY="sadoiuabnswodihabosdbn"
 ```
+=======
+>>>>>>> 8cc6afde8ec6c14957e96f652c02a569a2829406
