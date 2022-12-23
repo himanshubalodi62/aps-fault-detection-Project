@@ -54,7 +54,6 @@ Create commits
 ```
 git commit -m "message"
 ```
-
 ```
 git push origin main
 ```
@@ -65,15 +64,12 @@ To push your changes forcefully.
 ```
 git push origin main -f
 ```
-
-
 To pull  changes from github repo
 ```
 git pull origin main
 ```
 Note: origin--> contains url to your github repo
 main--> is your branch name
-
 
 .env file has
 ```
