@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 from sensor.config import mongo_client
-
+#client = mongo_client("mongodb+srv://himanshu:hemu12345@ineuron.fpig7r5.mongodb.net/?retryWrites=true&w=majority")
 DATA_FILE_PATH="/config/workspace/aps_failure_training_set1.csv"
 DATABASE_NAME="aps"
 COLLECTION_NAME="sensor"
@@ -19,10 +19,4 @@ if __name__=="__main__":
     print(json_record[0])
     #insert converted json record to mongo db
     mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
-
-
-
-
-
-
 
