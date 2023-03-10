@@ -80,7 +80,7 @@ export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
 
 export AWS_DEFAULT_REGION=<AWS_DEFAULT_REGION>
 
-export MONGODB_URL="mongodb+srv://MongoDB:Sai12345@cluster0.i7o85x8.mongodb.net/?retryWrites=true&w=majority"
+export MONGODB_URL="mongodb+srv://himanshu:himanshu12345@ineuron.fpig7r5.mongodb.net/?retryWrites=true&w=majority"
 
 ```
 
@@ -88,7 +88,6 @@ export MONGODB_URL="mongodb+srv://MongoDB:Sai12345@cluster0.i7o85x8.mongodb.net/
 ```bash
 python main.py
 ```
-
 
 ## Run locally
 
