@@ -129,7 +129,7 @@ python main.py
 
 ### To download the dataset 
 ```
-wget 
+wget https://raw.githubusercontent.com/himanshubalodi62/aps-fault-detection-Project/main/aps_failure_training_set1.csv
 ```
 
 ### To check and reset git log
