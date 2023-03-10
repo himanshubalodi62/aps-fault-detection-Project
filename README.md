@@ -15,7 +15,7 @@ The problem is to reduce the cost due to unnecessary repairs. So it is required 
 ## Tech Stack Used
 
 1. Python 
-2. FastAPI 
+2. VS Code
 3. Machine learning algorithms
 4. Docker
 5. MongoDB
@@ -26,8 +26,10 @@ The problem is to reduce the cost due to unnecessary repairs. So it is required 
 1. AWS S3
 2. AWS EC2
 3. AWS ECR
-4. Git Actions
-5. Terraform
+4. AWS Elastic Beanstalk
+5. Airflow
+6. Git Actions
+7. 
 
 ## How to run?
 Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage. You also need AWS account to access the service like S3, ECR and EC2 instances.
@@ -45,83 +47,142 @@ Before we run the project, make sure that you are having MongoDB in your local s
 
 
 
+### Step 1: Clone the repository
+```bash
 
+```
 
-### Step 1 - Install the requirements
+### Step 2- Create a conda environment after opening the repository
 
+```bash
+conda create -n thyroid python=3.8 -y
 
+or 
+
+conda create --prefix ./env python=3.7 -y
+conda activate ./env
+```
+
+```bash
+conda activate thyroid
+```
+
+### Step 3 - Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 2 - Run main.py file
+### Step 4 - Export the environment variable
+```bash
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
 
+export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+
+export AWS_DEFAULT_REGION=<AWS_DEFAULT_REGION>
+
+export MONGODB_URL="mongodb+srv://MongoDB:Sai12345@cluster0.i7o85x8.mongodb.net/?retryWrites=true&w=majority"
+
+```
+
+### Step 5 - Run the application server
 ```bash
 python main.py
 ```
-<<<<<<< HEAD
 
 
-To download your dataset
+## Run locally
+
+1. Check if the Dockerfile is available in the project directory
+
+2. Build the Docker image
+```
+docker build --build-arg AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID> --build-arg AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY> --build-arg AWS_DEFAULT_REGION=<AWS_DEFAULT_REGION> --build-arg MONGODB_URL=<MONGODB_URL> . 
 
 ```
-wget https://raw.githubusercontent.com/avnyadav/sensor-fault-detection/main/aps_failure_training_set1.csv
+
+3. Run the Docker image
+```
+docker run -d -p 8080:8080 <IMAGE_NAME>
 ```
 
-This is changes made in neuro lab
-
-
-Git commands
-
-If you are starting a project and you want to use git in your project
+To run the project  first execute the below commmand.
+MONGO DB URL: 
 ```
-git init
+mongodb+srv://himanshu:himanshu12345@ineuron.fpig7r5.mongodb.net/?retryWrites=true&w=majority
 ```
-Note: This is going to initalize git in your source code.
+windows user
 
+```
+mongodb+srv://himanshu:himanshu12345@ineuron.fpig7r5.mongodb.net/?retryWrites=true&w=majority
+```
 
-OR
+Linux user
 
-You can clone exiting github repo
 ```
-git clone <github_url>
+mongodb+srv://himanshu:himanshu12345@ineuron.fpig7r5.mongodb.net/?retryWrites=true&w=majority
 ```
-Note: Clone/ Downlaod github  repo in your system
 
+then run 
+```
+python main.py
+```
 
-Add your changes made in file to git stagging are
+### To download the dataset 
 ```
-git add file_name
+wget 
 ```
-Note: You can given file_name to add specific file or use "." to add everything to staging are
 
+### To check and reset git log
+```
+git log
+git reset --soft 6afd
+6afd -> last 4 digit of log. 
+```
 
-Create commits
+### To add and uplod to git
 ```
-git commit -m "message"
-```
-```
+git add filename
+we can also use . for all file(Current directory)
+
+git commit -m "Message"
 git push origin main
 ```
-Note: origin--> contains url to your github repo
-main--> is your branch name 
 
-To push your changes forcefully.
+### To run jupyter-notebook in vscode
 ```
-git push origin main -f
+ pip install ipykernel
 ```
-To pull  changes from github repo
-```
-git pull origin main
-```
-Note: origin--> contains url to your github repo
-main--> is your branch name
 
-.env file has
+### **To create a new environment in vscode** 
 ```
-MONGO_DB_URL="mongodb://localhost:27017"
-AWS_ACCESS_KEY_ID="aagswdiquyawvdiu"
-AWS_SECRET_ACCESS_KEY="sadoiuabnswodihabosdbn"
+ 1. Select the command prompt as a terminal 
+conda create -p venv python==3.87 -y
 ```
-=======
->>>>>>> 8cc6afde8ec6c14957e96f652c02a569a2829406
+
+### Create a .env It contains details.
+```
+MONGO_DB_URL="mongodb://localhost:27017/neurolabDB"
+AWS_ACCESS_KEY_ID="fsdfsfsdfsfsdfsdf"
+AWS_SECRET_ACCESS_KEY="hfsdfsd"
+```
+### **To install dockers in aws machine (EC2)**
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+```
+
+**Secrets**
+```
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+AWS_ECR_LOGIN_URI=
+ECR_REPOSITORY_NAME=
+BUCKET_NAME=
+MONGO_DB_URL=
+```
+
+
+
