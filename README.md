@@ -49,13 +49,13 @@ Before we run the project, make sure that you are having MongoDB in your local s
 
 ### Step 1: Clone the repository
 ```bash
-
+https://github.com/himanshubalodi62/aps-fault-detection-Project.git
 ```
 
 ### Step 2- Create a conda environment after opening the repository
 
 ```bash
-conda create -n thyroid python=3.8 -y
+conda create -n sensor python=3.8 -y
 
 or 
 
@@ -64,7 +64,7 @@ conda activate ./env
 ```
 
 ```bash
-conda activate thyroid
+conda activate sensor
 ```
 
 ### Step 3 - Install the requirements
